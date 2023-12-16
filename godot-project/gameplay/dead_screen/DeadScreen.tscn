@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://gameplay/dead_screen/Button.gd" type="Script" id=1]
+[ext_resource path="res://gameplay/dead_screen/DeadScreen.png" type="Texture" id=2]
+
+[node name="DeadScreen" type="Sprite"]
+position = Vector2( 961.5, 539 )
+scale = Vector2( 0.969254, 0.973022 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.366
+anchor_top = 0.73
+anchor_right = 0.635
+anchor_bottom = 0.889
+margin_left = -726.144
+margin_top = -811.76
+margin_right = -1247.84
+margin_bottom = -968.568
+script = ExtResource( 1 )
