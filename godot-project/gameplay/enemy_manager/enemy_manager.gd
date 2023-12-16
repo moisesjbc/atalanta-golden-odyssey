@@ -27,12 +27,11 @@ func _on_respawn_timer_timeout():
 	$enemies.add_child(enemy)
 
 	remaining_enemies -= 1
-	print("remaining_enemies ", remaining_enemies)
 	if remaining_enemies <= 0:
 		$respawn_timer.stop()
 
 
 func emit_enemy_died():
 	emit_signal("enemy_died")
-	if remaining_enemies <= 0 and $enemies.get_child_count() <= 0:
+	if remaining_enemies <= 0 and $enemies.get_child_count() <= 1:
 		emit_signal("all_enemies_died")
