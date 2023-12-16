@@ -23,6 +23,9 @@ func _process(delta):
 		velocity.y = -1
 	elif Input.is_action_pressed("ui_down"):
 		velocity.y = 1
+		
+	$bow.look_at(get_global_mouse_position())
+	$animated_sprite.flip_h = get_global_mouse_position().x < global_position.x
 
 	if $cooldown_timer.is_stopped() and Input.is_mouse_button_pressed(BUTTON_LEFT):
 		$cooldown_timer.start(cooldown)
