@@ -16,7 +16,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	move_and_collide(speed * velocity * delta)
+	var collision = move_and_collide(speed * velocity * delta)
+	if collision:
+		collision.collider.queue_free()
 
 
 func _on_visibility_notifier_viewport_exited(viewport):
