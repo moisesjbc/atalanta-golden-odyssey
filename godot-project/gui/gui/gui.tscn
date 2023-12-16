@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://gui/gui/gui.gd" type="Script" id=1]
 [ext_resource path="res://gui/gui/barra de vida.png" type="Texture" id=2]
 [ext_resource path="res://gui/gui/vida.png" type="Texture" id=3]
+[ext_resource path="res://gui/gui/mejora manzana.png" type="Texture" id=4]
+[ext_resource path="res://gui/gui/Menu mejoras.png" type="Texture" id=5]
+[ext_resource path="res://gui/gui/mejora velocidad ahora si.png" type="Texture" id=6]
+[ext_resource path="res://gui/gui/mejora mas daño .png" type="Texture" id=7]
 
 [node name="gui" type="Node"]
 pause_mode = 2
@@ -34,7 +38,6 @@ position = Vector2( 160, 89 )
 texture = ExtResource( 2 )
 
 [node name="improvements_panel" type="CenterContainer" parent="gui"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -45,9 +48,17 @@ margin_right = 1160.0
 margin_bottom = 590.0
 rect_min_size = Vector2( 400, 100 )
 
+[node name="Sprite" type="Sprite" parent="gui/improvements_panel/panel"]
+position = Vector2( 200, -160 )
+texture = ExtResource( 5 )
+
 [node name="margin_container" type="MarginContainer" parent="gui/improvements_panel/panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -132.0
+margin_top = -73.0
+margin_right = 125.0
+margin_bottom = 53.0
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -56,29 +67,47 @@ custom_constants/margin_bottom = 10
 [node name="hbox_container" type="HBoxContainer" parent="gui/improvements_panel/panel/margin_container"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 390.0
-margin_bottom = 90.0
+margin_right = 647.0
+margin_bottom = 216.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 15
+custom_constants/separation = 30
+
+[node name="more_hp_sprite" type="Sprite" parent="gui/improvements_panel/panel/margin_container/hbox_container"]
+position = Vector2( 90, 110 )
+scale = Vector2( 3.1875, 3.125 )
+texture = ExtResource( 4 )
 
 [node name="more_hp_button" type="Button" parent="gui/improvements_panel/panel/margin_container/hbox_container"]
-margin_right = 116.0
-margin_bottom = 80.0
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 192.0
+margin_bottom = 206.0
 size_flags_horizontal = 3
 text = "HP"
 
+[node name="more_speed_sprite" type="Sprite" parent="gui/improvements_panel/panel/margin_container/hbox_container"]
+position = Vector2( 319.5, 104.5 )
+scale = Vector2( 2.67188, 2.67188 )
+texture = ExtResource( 6 )
+
 [node name="more_speed_button" type="Button" parent="gui/improvements_panel/panel/margin_container/hbox_container"]
-margin_left = 131.0
-margin_right = 248.0
-margin_bottom = 80.0
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 222.0
+margin_right = 414.0
+margin_bottom = 206.0
 size_flags_horizontal = 3
 text = "Speed"
 
+[node name="more_damage_sprite" type="Sprite" parent="gui/improvements_panel/panel/margin_container/hbox_container"]
+position = Vector2( 547, 104 )
+scale = Vector2( 2.6875, 2.65625 )
+texture = ExtResource( 7 )
+
 [node name="more_damage_button" type="Button" parent="gui/improvements_panel/panel/margin_container/hbox_container"]
-margin_left = 263.0
-margin_right = 380.0
-margin_bottom = 80.0
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 444.0
+margin_right = 637.0
+margin_bottom = 206.0
 size_flags_horizontal = 3
 text = "Damage"
 
