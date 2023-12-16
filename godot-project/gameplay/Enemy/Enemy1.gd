@@ -4,9 +4,9 @@ export var speed: int = 500
 
 var targetposition = Vector2(960,540)
 var central_object
+
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-
 	var direction = (targetposition - global_position).normalized()
 	
 	var collition = move_and_collide(speed * direction * delta)
@@ -16,4 +16,7 @@ func _process(delta):
 
 
 func _on_Timer_timeout():
-	if central_object : central_object.take_damage(10.0)
+	if is_instance_valid(central_object):
+		central_object.take_damage(10.0)
+	else:
+		$Timer.stop()

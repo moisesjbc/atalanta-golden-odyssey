@@ -16,7 +16,7 @@ texture = ExtResource( 4 )
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 531, 348 )
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
+[node name="central_object" parent="." instance=ExtResource( 2 )]
 position = Vector2( 960, 540 )
 scale = Vector2( 1, 1 )
 

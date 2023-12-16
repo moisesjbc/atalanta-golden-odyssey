@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 33.0151
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="central_object" type="StaticBody2D"]
 position = Vector2( 1120, 0 )
 scale = Vector2( 50, 1 )
 collision_layer = 4
