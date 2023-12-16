@@ -31,6 +31,7 @@ func _process(delta):
 		bullet.target_position = get_global_mouse_position()
 		bullet.damage = damage
 		get_parent().add_child(bullet)
+		$arrow.play()
 
 	move_and_collide(speed * velocity * delta)
 
