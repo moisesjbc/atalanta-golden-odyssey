@@ -2,8 +2,6 @@ extends KinematicBody2D
 
 export var speed: int = 500
 
-signal enemy_died
-
 var targetposition = Vector2(960,540)
 var central_object
 var health = 3
@@ -11,7 +9,7 @@ var health = 3
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
 	var direction = (targetposition - global_position).normalized()
-
+	
 	var collition = move_and_collide(speed * direction * delta)
 	if $Timer.is_stopped() and collition:
 		central_object = collition.collider
@@ -30,6 +28,3 @@ func apply_damage(damage):
 
 func enemy_die():
 	queue_free()
-
-func _on_CollisionShape2D_tree_exited():
-	emit_signal("enemy_died")

@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://gameplay/main_stable/main_stable.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/CentralObject/CentralObject.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gameplay/player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://gameplay/main/BACKGROUND.png" type="Texture" id=4]
@@ -8,8 +7,6 @@
 [ext_resource path="res://gui/gui/gui.tscn" type="PackedScene" id=6]
 
 [node name="main_stable" type="Node2D"]
-script = ExtResource( 1 )
-initial_enemies = 3
 
 [node name="background" type="Sprite" parent="."]
 position = Vector2( 962.5, 547.5 )
@@ -27,10 +24,9 @@ scale = Vector2( 1, 1 )
 
 [node name="enemy_manager" parent="." instance=ExtResource( 5 )]
 
-[node name="gui" parent="." instance=ExtResource( 6 )]
+[node name="Node" type="Node" parent="."]
 
-[connection signal="destroyed" from="central_object" to="gui" method="_on_central_object_destroyed"]
-[connection signal="hp_changed" from="central_object" to="gui" method="_on_central_object_hp_changed"]
-[connection signal="all_enemies_died" from="enemy_manager" to="." method="_on_enemy_manager_all_enemies_died"]
-[connection signal="enemy_died" from="enemy_manager" to="gui" method="_on_enemy_manager_enemy_died"]
-[connection signal="improvement_selected" from="gui" to="." method="_on_gui_improvement_selected"]
+[node name="gui" parent="Node" instance=ExtResource( 6 )]
+
+[connection signal="destroyed" from="central_object" to="Node/gui" method="_on_central_object_destroyed"]
+[connection signal="hp_changed" from="central_object" to="Node/gui" method="_on_central_object_hp_changed"]
