@@ -21,7 +21,7 @@ func _process(delta):
 	if is_instance_valid(collision):
 		collision.collider.apply_damage(damage)
 		queue_free()
-	
+
 
 func _on_visibility_notifier_viewport_exited(viewport):
 	queue_free()
