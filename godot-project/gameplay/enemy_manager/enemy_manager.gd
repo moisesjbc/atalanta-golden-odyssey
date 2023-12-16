@@ -3,6 +3,8 @@ extends Node2D
 var enemy_scene = preload("res://gameplay/Enemy/Enemy1.tscn")
 
 var remaining_enemies = 20
+var player
+var central_object
 
 signal enemy_died
 signal all_enemies_died
@@ -11,6 +13,10 @@ signal all_enemies_died
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
+func set_targets(player, central_object):
+	self.player = player
+	self.central_object = central_object
 
 
 func start_wave(total_enemies):
@@ -24,6 +30,7 @@ func _on_respawn_timer_timeout():
 	$path_2d/path_follow.set_offset(randi())
 	enemy.global_position = $path_2d/path_follow.global_position
 	enemy.connect("enemy_died", self, "emit_enemy_died")
+	enemy.set_targets(player, central_object)
 	$enemies.add_child(enemy)
 
 	remaining_enemies -= 1

@@ -2,20 +2,38 @@ extends KinematicBody2D
 
 export var speed: int = 500
 
-var targetposition = Vector2(960,540)
+var target
+var player
 var central_object
 var health = 3
 signal enemy_died
 var attacking = false
 var initial_h_scale
 
+
 func _ready():
 	$animated_sprite.play("walking")
 	initial_h_scale = scale.x
 
+
+func set_targets(player, central_object):
+	self.player = player
+	self.central_object = central_object
+
+
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	var direction = (targetposition - global_position).normalized()
+	if is_instance_valid(player) and is_instance_valid(central_object):
+		if global_position.distance_to(player.global_position) < global_position.distance_to(central_object.global_position):
+			if target == central_object:
+				attacking = false
+			target = player
+		else:
+			if target == player:
+				attacking = false
+			target = central_object
+
+	var direction = (target.global_position - global_position).normalized()
 
 	# Enemy looks to the left by default
 	if direction.x >= 0:
@@ -24,7 +42,6 @@ func _process(delta):
 	if $animated_sprite.animation != "dying":
 		var collition = move_and_collide(speed * direction * delta)
 		if not attacking and collition:
-			central_object = collition.collider
 			attacking = true
 			$Timer.start(1)
 
