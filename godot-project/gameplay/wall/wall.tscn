@@ -9,6 +9,7 @@ extents = Vector2( 984.5, 28 )
 collision_layer = 16
 
 [node name="sprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 950.5, 0 )
 scale = Vector2( 30.7031, 1 )
 texture = ExtResource( 1 )
