@@ -7,7 +7,7 @@ var damage
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$animated_sprite.play("walking")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,3 +50,11 @@ func set_damage(new_damage):
 
 func increase_damage(damage_delta):
 	damage += damage_delta
+
+func hurt():
+	$animated_sprite.play("hurt")
+
+
+func _on_animated_sprite_animation_finished():
+	if $animated_sprite.animation == "hurt":
+		$animated_sprite.play("walking")

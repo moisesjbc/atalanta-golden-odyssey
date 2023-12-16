@@ -75,6 +75,8 @@ func _on_animated_sprite_animation_finished():
 	print("Finished ", animated_sprite.animation)
 	if animated_sprite.animation == "attacking":
 		central_object.take_damage(10.0)
+		if target == player:
+			player.hurt()
 		animated_sprite.play("idle")
 	elif animated_sprite.animation == "dying":
 		print("Dying!")
