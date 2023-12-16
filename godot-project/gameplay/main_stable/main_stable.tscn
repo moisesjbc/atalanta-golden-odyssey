@@ -9,8 +9,8 @@
 
 [node name="main_stable" type="Node2D"]
 script = ExtResource( 1 )
-initial_enemies = 3
-new_enemies_per_level = 2
+initial_enemies = 2
+new_enemies_per_level = 0
 initial_shooting_speed = 0.6
 
 [node name="background" type="Sprite" parent="."]
