@@ -5,6 +5,8 @@ export var speed: int = 500
 var targetposition = Vector2(960,540)
 var central_object
 var health = 3
+signal enemy_died
+
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
@@ -27,4 +29,5 @@ func apply_damage(damage):
 		enemy_die()
 
 func enemy_die():
+	emit_signal("enemy_died")
 	queue_free()
