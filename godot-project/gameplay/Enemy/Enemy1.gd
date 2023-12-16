@@ -7,13 +7,19 @@ var central_object
 var health = 3
 signal enemy_died
 var attacking = false
+var initial_h_scale
 
 func _ready():
 	$animated_sprite.play("walking")
+	initial_h_scale = scale.x
 
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
 	var direction = (targetposition - global_position).normalized()
+
+	# Enemy looks to the left by default
+	if direction.x >= 0:
+		$animated_sprite.flip_h = true
 	
 	if $animated_sprite.animation != "dying":
 		var collition = move_and_collide(speed * direction * delta)
