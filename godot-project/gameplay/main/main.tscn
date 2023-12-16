@@ -1,8 +1,24 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://gameplay/player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://gameplay/wall/wall.tscn" type="PackedScene" id=2]
 
 [node name="main" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 633, 447 )
+
+[node name="walls" type="Node2D" parent="."]
+
+[node name="top_wall" parent="walls" instance=ExtResource( 2 )]
+
+[node name="left_wall" parent="walls" instance=ExtResource( 2 )]
+position = Vector2( 0, -464 )
+rotation = 1.5708
+
+[node name="right_wall" parent="walls" instance=ExtResource( 2 )]
+position = Vector2( 1912, -464 )
+rotation = 1.5708
+
+[node name="bot_wall" parent="walls" instance=ExtResource( 2 )]
+position = Vector2( 0, 1088 )
