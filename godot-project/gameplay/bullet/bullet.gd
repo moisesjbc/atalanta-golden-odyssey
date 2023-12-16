@@ -12,6 +12,7 @@ var damage: int = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	velocity = (target_position - global_position).normalized()
+	look_at(target_position)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
