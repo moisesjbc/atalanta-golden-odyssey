@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var speed: int = 500
+onready var bullet_scene = preload("res://gameplay/bullet/bullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,5 +16,16 @@ func _process(delta):
 		velocity.x = -1
 	elif Input.is_action_pressed("ui_right"):
 		velocity.x = 1
+
+	if Input.is_action_pressed("ui_up"):
+		velocity.y = -1
+	elif Input.is_action_pressed("ui_down"):
+		velocity.y = 1
+
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		var bullet = bullet_scene.instance()
+		bullet.global_position = global_position
+		bullet.target_position = get_global_mouse_position()
+		get_parent().add_child(bullet)
 
 	move_and_collide(speed * velocity * delta)
