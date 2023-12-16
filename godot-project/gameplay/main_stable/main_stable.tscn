@@ -22,8 +22,8 @@ texture = ExtResource( 4 )
 position = Vector2( 531, 348 )
 
 [node name="central_object" parent="." instance=ExtResource( 2 )]
-position = Vector2( 960, 590 )
-scale = Vector2( 2, 2 )
+position = Vector2( 962, 528 )
+scale = Vector2( 0.2, 0.2 )
 
 [node name="walls" type="Node2D" parent="."]
 
