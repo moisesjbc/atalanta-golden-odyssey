@@ -15,11 +15,12 @@ func _ready():
 func _process(delta):
 	var direction = (targetposition - global_position).normalized()
 	
-	var collition = move_and_collide(speed * direction * delta)
-	if not attacking and collition:
-		central_object = collition.collider
-		attacking = true
-		$Timer.start(1)
+	if $animated_sprite.animation != "dying":
+		var collition = move_and_collide(speed * direction * delta)
+		if not attacking and collition:
+			central_object = collition.collider
+			attacking = true
+			$Timer.start(1)
 
 func _on_Timer_timeout():
 	if is_instance_valid(central_object):
@@ -38,6 +39,7 @@ func apply_damage(damage):
 
 func enemy_die():
 	$Timer.stop()
+	$CollisionShape2D.disabled = true
 	$animated_sprite.play("dying")
 
 
