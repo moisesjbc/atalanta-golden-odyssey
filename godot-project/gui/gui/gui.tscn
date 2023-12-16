@@ -3,6 +3,7 @@
 [ext_resource path="res://gui/gui/gui.gd" type="Script" id=1]
 
 [node name="gui" type="Node"]
+pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="gui" type="Control" parent="."]
@@ -15,3 +16,65 @@ margin_left = 14.0
 margin_top = 12.0
 margin_right = 317.0
 margin_bottom = 46.0
+
+[node name="improvements_panel" type="CenterContainer" parent="gui"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="panel" type="Panel" parent="gui/improvements_panel"]
+margin_left = 760.0
+margin_top = 490.0
+margin_right = 1160.0
+margin_bottom = 590.0
+rect_min_size = Vector2( 400, 100 )
+
+[node name="margin_container" type="MarginContainer" parent="gui/improvements_panel/panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="hbox_container" type="HBoxContainer" parent="gui/improvements_panel/panel/margin_container"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 390.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+
+[node name="more_hp_button" type="Button" parent="gui/improvements_panel/panel/margin_container/hbox_container"]
+margin_right = 116.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+text = "HP"
+
+[node name="more_speed_button" type="Button" parent="gui/improvements_panel/panel/margin_container/hbox_container"]
+margin_left = 131.0
+margin_right = 248.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+text = "Speed"
+
+[node name="more_damage_button" type="Button" parent="gui/improvements_panel/panel/margin_container/hbox_container"]
+margin_left = 263.0
+margin_right = 380.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+text = "Damage"
+
+[node name="enemies_label" type="Label" parent="gui"]
+margin_left = 1810.0
+margin_top = 17.0
+margin_right = 1907.0
+margin_bottom = 63.0
+text = "1 / 10"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="gui/improvements_panel/panel/margin_container/hbox_container/more_hp_button" to="." method="_on_more_hp_button_pressed"]
+[connection signal="pressed" from="gui/improvements_panel/panel/margin_container/hbox_container/more_speed_button" to="." method="_on_more_speed_button_pressed"]
+[connection signal="pressed" from="gui/improvements_panel/panel/margin_container/hbox_container/more_damage_button" to="." method="_on_more_damage_button_pressed"]
