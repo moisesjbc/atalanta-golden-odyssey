@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var speed: int = 500
 onready var bullet_scene = preload("res://gameplay/bullet/bullet.tscn")
+export var cooldown = 0.3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,7 +23,8 @@ func _process(delta):
 	elif Input.is_action_pressed("ui_down"):
 		velocity.y = 1
 
-	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+	if $cooldown_timer.is_stopped() and Input.is_mouse_button_pressed(BUTTON_LEFT):
+		$cooldown_timer.start(cooldown)
 		var bullet = bullet_scene.instance()
 		bullet.global_position = global_position
 		bullet.target_position = get_global_mouse_position()
