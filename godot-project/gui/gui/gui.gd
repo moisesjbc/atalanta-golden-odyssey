@@ -51,7 +51,7 @@ func _on_more_hp_button_pressed():
 
 
 func _on_more_speed_button_pressed():
-	emit_signal("improvement_selected", "more_speed")
+	emit_signal("improvement_selected", "more_shooting_speed")
 	close_improvements_panel()
 
 
