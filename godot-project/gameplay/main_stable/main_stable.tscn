@@ -27,3 +27,6 @@ scale = Vector2( 1, 1 )
 [node name="Node" type="Node" parent="."]
 
 [node name="gui" parent="Node" instance=ExtResource( 6 )]
+
+[connection signal="destroyed" from="central_object" to="Node/gui" method="_on_central_object_destroyed"]
+[connection signal="hp_changed" from="central_object" to="Node/gui" method="_on_central_object_hp_changed"]

@@ -15,36 +15,3 @@ margin_left = 14.0
 margin_top = 12.0
 margin_right = 317.0
 margin_bottom = 46.0
-
-[node name="game_over_container" type="CenterContainer" parent="gui"]
-pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="panel" type="Panel" parent="gui/game_over_container"]
-margin_left = 760.0
-margin_top = 390.0
-margin_right = 1160.0
-margin_bottom = 690.0
-rect_min_size = Vector2( 400, 300 )
-
-[node name="margin_container" type="MarginContainer" parent="gui/game_over_container/panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
-
-[node name="vbox_container" type="VBoxContainer" parent="gui/game_over_container/panel/margin_container"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 390.0
-margin_bottom = 290.0
-
-[node name="resume_game" type="Button" parent="gui/game_over_container/panel/margin_container/vbox_container"]
-margin_right = 380.0
-margin_bottom = 20.0
-text = "Retry"
-
-[connection signal="pressed" from="gui/game_over_container/panel/margin_container/vbox_container/resume_game" to="." method="_on_resume_game_pressed"]

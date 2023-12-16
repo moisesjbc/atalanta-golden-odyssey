@@ -8,4 +8,4 @@ func _ready():
 # Función llamada cuando el botón es presionado
 func _on_button_pressed():
 	# Cargar la escena principal
-	get_tree().change_scene("res://gameplay/main/main.tscn")
+	get_tree().change_scene("res://gameplay/main_stable/main_stable.tscn")
