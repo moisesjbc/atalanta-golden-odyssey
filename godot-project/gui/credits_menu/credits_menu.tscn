@@ -7,6 +7,7 @@
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]
+size = 30
 font_data = ExtResource( 5 )
 
 [node name="main_menu" type="Node2D"]
@@ -37,8 +38,38 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "CREDITS"
-text = "CREDITS"
+bbcode_text = "[center]
+[color=red]Game Designer[/color]
+Raul Iglesias Julios
+[color=red]Programmers[/color]
+Audrey Diaz Armas
+Moises José Bonilla Caraballo
+[color=red]Character designers and Animators[/color]
+Victoria Naranjo Gonzalez
+Alejandro Perdomo Cano
+Alejandro Cardenas Alamo
+Laura Ruiz Almarza
+Sophie Nikifaravetz
+[color=red]Community and marketing managers[/color]
+Alessandro Grimon Nuñes
+Sophie Nikifaravetz
+[/center]"
+text = "
+Game Designer
+Raul Iglesias Julios
+Programmers
+Audrey Diaz Armas
+Moises José Bonilla Caraballo
+Character designers and Animators
+Victoria Naranjo Gonzalez
+Alejandro Perdomo Cano
+Alejandro Cardenas Alamo
+Laura Ruiz Almarza
+Sophie Nikifaravetz
+Community and marketing managers
+Alessandro Grimon Nuñes
+Sophie Nikifaravetz
+"
 
 [node name="return_to_main_menu" parent="vbox_container" instance=ExtResource( 3 )]
 margin_top = 643.0
