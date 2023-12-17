@@ -79,7 +79,6 @@ func _on_animated_sprite_animation_finished():
 			player.hurt()
 		animated_sprite.play("idle")
 	elif animated_sprite.animation == "dying":
-		print("Dying!")
 		emit_signal("enemy_died")
 		queue_free()
 	elif animated_sprite.animation == "hurt":
@@ -95,4 +94,12 @@ func _on_ghost_animation_finished():
 
 
 func _on_skeleton_animation_finished():
+	_on_animated_sprite_animation_finished()
+
+
+func _on_ciclop_animation_finished():
+	_on_animated_sprite_animation_finished()
+
+
+func _on_crow_animation_finished():
 	_on_animated_sprite_animation_finished()
