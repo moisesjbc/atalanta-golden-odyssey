@@ -6,8 +6,13 @@ signal destroyed
 export var max_health: float = 100.0
 var current_health: float = max_health
 
+func _ready():
+	$apple_sprite.play("idle")
+
+
 # Función para reducir la salud del objeto central
 func take_damage(amount: float):
+	$apple_sprite.play("hurt")
 	modify_hp(-amount)
 
 
@@ -22,3 +27,9 @@ func modify_hp(hp_delta):
 	if current_health <= 0:
 		emit_signal("destroyed")
 		queue_free()  # Destruir el objeto central si la salud llega a cero
+
+
+func _on_apple_sprite_animation_finished():
+	if $apple_sprite.animation == "hurt":
+		$apple_sprite.play("idle")
+		
