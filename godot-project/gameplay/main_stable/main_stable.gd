@@ -29,6 +29,8 @@ func start_wave(wave_index):
 	$enemy_manager.set_targets($player, $central_object)
 	$gui.set_total_enemies($enemy_manager.total_enemies)
 	$gui.set_current_wave(wave_index)
+	$backgrounds.get_child(0).visible = (wave_index % 2) == 0
+	$backgrounds.get_child(1).visible = (wave_index % 2) != 0
 
 
 func _on_enemy_manager_all_enemies_died():

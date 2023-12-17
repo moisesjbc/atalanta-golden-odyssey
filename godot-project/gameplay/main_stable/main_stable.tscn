@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://gameplay/main_stable/main_stable.gd" type="Script" id=1]
 [ext_resource path="res://gameplay/CentralObject/CentralObject.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://gameplay/enemy_manager/enemy_manager.tscn" type="PackedScene" id=5]
 [ext_resource path="res://gui/gui/gui.tscn" type="PackedScene" id=6]
 [ext_resource path="res://gameplay/wall/wall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://gameplay/main_stable/escenario 2_FINAL.png" type="Texture" id=8]
 
 [node name="main_stable" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,10 +15,16 @@ initial_enemies = 2
 new_enemies_per_level = 0
 initial_shooting_speed = 0.6
 
-[node name="background" type="Sprite" parent="."]
+[node name="backgrounds" type="Node2D" parent="."]
+
+[node name="background_01" type="Sprite" parent="backgrounds"]
 position = Vector2( 962.5, 547.5 )
 scale = Vector2( 6.00313, 6.06111 )
 texture = ExtResource( 4 )
+
+[node name="background_02" type="Sprite" parent="backgrounds"]
+position = Vector2( 961, 541 )
+texture = ExtResource( 8 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 531, 348 )
