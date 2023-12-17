@@ -1,6 +1,8 @@
 extends Node2D
 
 
+func _ready():
+	OS.window_fullscreen = true
 
 
 func _on_return_to_main_menu_pressed():
