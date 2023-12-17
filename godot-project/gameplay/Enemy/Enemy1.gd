@@ -10,10 +10,12 @@ signal enemy_died
 var attacking = false
 var initial_h_scale
 var animated_sprite
+var movement_speed
+var attack_speed
+var damage
 
 
-
-func init(selected_animation_index, player, central_object):
+func init(selected_animation_index, player, central_object, movement_speed, attack_speed, health, damage):
 	for animation_index in $animations.get_child_count():
 		$animations.get_child(animation_index).visible = (animation_index == selected_animation_index)
 	animated_sprite = $animations.get_child(selected_animation_index)
@@ -22,6 +24,10 @@ func init(selected_animation_index, player, central_object):
 	
 	self.player = player
 	self.central_object = central_object
+	self.movement_speed = movement_speed
+	self.attack_speed = attack_speed
+	self.health = health
+	self.damage = damage
 
 
 # Called when the node enters the scene tree for the first time.
@@ -43,15 +49,15 @@ func _process(delta):
 		animated_sprite.flip_h = true
 	
 	if animated_sprite.animation != "dying":
-		var collition = move_and_collide(speed * direction * delta)
+		var collition = move_and_collide(movement_speed * direction * delta)
 		if not attacking and collition:
 			attacking = true
-			$Timer.start(1)
+			$Timer.start(attack_speed)
 
 func _on_Timer_timeout():
 	if is_instance_valid(central_object):
 		animated_sprite.play("attacking")
-		$Timer.start(1)
+		$Timer.start(attack_speed)
 	else:
 		$Timer.stop()
 
