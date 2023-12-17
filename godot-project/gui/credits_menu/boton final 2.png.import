@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fondo cielo 2.png-44f2c8844a9af5e07ef9d5af024e784c.stex"
+path="res://.import/boton final 2.png-6d6f04401413d6f9c27fea1b31ccbbdb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/main_menu/fondo cielo 2.png"
-dest_files=[ "res://.import/fondo cielo 2.png-44f2c8844a9af5e07ef9d5af024e784c.stex" ]
+source_file="res://gui/credits_menu/boton final 2.png"
+dest_files=[ "res://.import/boton final 2.png-6d6f04401413d6f9c27fea1b31ccbbdb.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
