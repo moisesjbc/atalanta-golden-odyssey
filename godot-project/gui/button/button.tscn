@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://gui/button/button.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://gui/main_menu/boton_inicio_recortado.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="button" type="TextureButton"]
+margin_right = 88.0
+margin_bottom = 36.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_disabled = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+expand = true
+script = ExtResource( 1 )
+text = "Play"
+
+[node name="label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "PLAY"
+align = 1
+valign = 1

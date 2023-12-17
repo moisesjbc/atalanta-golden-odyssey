@@ -21,7 +21,7 @@ func init(selected_animation_index, player, central_object, movement_speed, atta
 	animated_sprite = $animations.get_child(selected_animation_index)
 	animated_sprite.play("walking")
 	initial_h_scale = scale.x
-	
+
 	self.player = player
 	self.central_object = central_object
 	self.movement_speed = movement_speed
