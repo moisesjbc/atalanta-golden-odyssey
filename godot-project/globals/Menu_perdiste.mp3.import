@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Menu_perdiste.mp3-a9daf495e8bfa34ebe66e2dedceb7324.mp3str"
+
+[deps]
+
+source_file="res://globals/Menu_perdiste.mp3"
+dest_files=[ "res://.import/Menu_perdiste.mp3-a9daf495e8bfa34ebe66e2dedceb7324.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

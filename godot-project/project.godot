@@ -14,6 +14,10 @@ config/name="Game Island Jam 2"
 run/main_scene="res://gui/main_menu/main_menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+globals="*res://globals/globals.tscn"
+
 [display]
 
 window/size/width=1920
