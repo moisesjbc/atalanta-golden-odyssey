@@ -28,7 +28,8 @@ func start_wave(wave_index):
 	$enemy_manager.start_wave(current_wave)
 	$enemy_manager.set_targets($player, $central_object)
 	$gui.set_total_enemies($enemy_manager.total_enemies)
-	
+	$gui.set_current_wave(wave_index)
+
 
 func _on_enemy_manager_all_enemies_died():
 	$gui.show_improvements_panel()

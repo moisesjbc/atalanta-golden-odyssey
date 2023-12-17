@@ -30,6 +30,8 @@ func set_total_enemies(total_enemies):
 func update_enemies_label():
 	$gui/enemies_label.text = "Enemies: " + str(self.killed_enemies) + " / " + str(self.total_enemies)
 
+func set_current_wave(wave_index):
+	$gui/wave_label.text = "Wave: " + str(wave_index)
 
 func _on_enemy_manager_enemy_died():
 	self.killed_enemies += 1
