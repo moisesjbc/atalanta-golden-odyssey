@@ -12,16 +12,14 @@ var initial_h_scale
 var animated_sprite
 
 
-func _ready():
-	var selected_animation_index = randi() % $animations.get_child_count()
+
+func init(selected_animation_index, player, central_object):
 	for animation_index in $animations.get_child_count():
 		$animations.get_child(animation_index).visible = (animation_index == selected_animation_index)
 	animated_sprite = $animations.get_child(selected_animation_index)
 	animated_sprite.play("walking")
 	initial_h_scale = scale.x
-
-
-func set_targets(player, central_object):
+	
 	self.player = player
 	self.central_object = central_object
 
@@ -58,7 +56,6 @@ func _on_Timer_timeout():
 		$Timer.stop()
 
 func apply_damage(damage):
-	print("APPLYING DAMAGE")
 	health -= damage
 	if health <= 0:
 		enemy_die()
@@ -72,7 +69,6 @@ func enemy_die():
 
 
 func _on_animated_sprite_animation_finished():
-	print("Finished ", animated_sprite.animation)
 	if animated_sprite.animation == "attacking":
 		central_object.take_damage(10.0)
 		if target == player:

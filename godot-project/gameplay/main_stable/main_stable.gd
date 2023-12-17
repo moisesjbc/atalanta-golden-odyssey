@@ -25,10 +25,9 @@ func start_wave(wave_index):
 	print("Shooting speed ", $player.cooldown)
 	print("Damage ", $player.damage)
 	current_wave = wave_index
-	var total_enemies = initial_enemies + wave_index * new_enemies_per_level
-	$enemy_manager.start_wave(total_enemies)
+	$enemy_manager.start_wave(current_wave)
 	$enemy_manager.set_targets($player, $central_object)
-	$gui.set_total_enemies(total_enemies)
+	$gui.set_total_enemies($enemy_manager.total_enemies)
 	
 
 func _on_enemy_manager_all_enemies_died():
