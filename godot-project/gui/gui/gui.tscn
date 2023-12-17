@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://gui/gui/gui.gd" type="Script" id=1]
 [ext_resource path="res://gui/gui/barra de vida.png" type="Texture" id=2]
@@ -7,6 +7,11 @@
 [ext_resource path="res://gui/gui/Menu mejoras.png" type="Texture" id=5]
 [ext_resource path="res://gui/gui/mejora velocidad ahora si.png" type="Texture" id=6]
 [ext_resource path="res://gui/gui/mejora mas daño .png" type="Texture" id=7]
+[ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 8 )
 
 [node name="gui" type="Node"]
 pause_mode = 2
@@ -18,17 +23,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="ColorRect" type="ColorRect" parent="gui"]
-margin_left = 139.0
-margin_top = 93.0
-margin_right = 312.0
-margin_bottom = 120.0
+margin_left = 121.0
+margin_top = 57.0
+margin_right = 294.0
+margin_bottom = 84.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="health_bar" type="TextureProgress" parent="gui"]
-margin_left = 14.0
-margin_top = 12.0
-margin_right = 317.0
-margin_bottom = 46.0
+margin_left = -4.0
+margin_top = -24.0
+margin_right = 299.0
+margin_bottom = 183.0
 value = 100.0
 texture_progress = ExtResource( 3 )
 texture_progress_offset = Vector2( 105, -41 )
@@ -113,11 +118,12 @@ size_flags_horizontal = 3
 text = "Damage"
 
 [node name="enemies_label" type="Label" parent="gui"]
-margin_left = 1810.0
-margin_top = 17.0
-margin_right = 1907.0
-margin_bottom = 63.0
-text = "1 / 10"
+margin_left = 1624.0
+margin_top = 13.0
+margin_right = 1908.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 1 )
+text = "Enemies: 1 / 10"
 align = 1
 valign = 1
 

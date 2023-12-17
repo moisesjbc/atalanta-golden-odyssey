@@ -28,7 +28,7 @@ func set_total_enemies(total_enemies):
 
 
 func update_enemies_label():
-	$gui/enemies_label.text = str(self.killed_enemies) + " / " + str(self.total_enemies)
+	$gui/enemies_label.text = "Enemies: " + str(self.killed_enemies) + " / " + str(self.total_enemies)
 
 
 func _on_enemy_manager_enemy_died():
