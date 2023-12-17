@@ -14,6 +14,7 @@ script = ExtResource( 1 )
 initial_enemies = 2
 new_enemies_per_level = 0
 initial_shooting_speed = 0.6
+shooting_speed_delta_per_improvement = 0.01
 
 [node name="backgrounds" type="Node2D" parent="."]
 
