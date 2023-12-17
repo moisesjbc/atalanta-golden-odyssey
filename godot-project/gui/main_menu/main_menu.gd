@@ -6,7 +6,7 @@ func _ready():
 
 
 func _on_return_to_main_menu_pressed():
-	get_tree().change_scene("res://gui/main_menu/main_menu.tscn")
+	get_tree().change_scene("res://intr")
 
 
 func _on_credits_pressed():
@@ -14,4 +14,4 @@ func _on_credits_pressed():
 
 
 func _on_play_pressed():
-	get_tree().change_scene("res://gameplay/main_stable/main_stable.tscn")
+	get_tree().change_scene("res://gui/intro/intro.tscn")

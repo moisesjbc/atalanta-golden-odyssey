@@ -1,0 +1,13 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+valid=false
+
+[deps]
+
+source_file="res://gui/intro/file_example_OGG_480_1_7mg.ogg"
+[params]
+
+loop=true
+loop_offset=0
